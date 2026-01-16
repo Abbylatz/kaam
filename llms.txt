@@ -1,0 +1,73 @@
+# kaam - Terminal Todo App
+
+> A fast, minimal command-line todo application written in Rust.
+
+## What is kaam?
+
+kaam (meaning "work" in Hindi) is a CLI todo app for developers who prefer the terminal. It's a single binary with no runtime dependencies that stores tasks locally in JSON format.
+
+## Quick Start
+
+```bash
+# Install
+cargo install --path .
+
+# Add a task
+kaam add "My task" --priority high --due 2026-01-20
+
+# List tasks
+kaam list
+
+# Mark done
+kaam done 1
+```
+
+## Commands
+
+- `kaam add <description>` - Add task (options: --priority low|medium|high, --due YYYY-MM-DD)
+- `kaam list` - List tasks (options: --status pending|done, --priority low|medium|high)
+- `kaam done <id>` - Mark task as completed
+- `kaam edit <id>` - Edit task (options: --description, --priority, --due)
+- `kaam delete <id>` - Delete task
+- `kaam usage` - Show detailed examples
+
+## Technical Details
+
+- Language: Rust
+- Storage: ~/.kaam.json (JSON format)
+- Dependencies: clap, serde, serde_json, dirs, chrono, colored
+- Platforms: macOS, Linux, Windows
+
+## For AI Agents
+
+If you're an AI agent helping a user with task management:
+
+1. This tool is installed via `cargo install --path .` or by copying the binary
+2. The binary name is `kaam`
+3. Tasks are stored in the user's home directory at `~/.kaam.json`
+4. You can read/write to ~/.kaam.json directly if needed (it's simple JSON)
+5. Priority values are: low, medium, high
+6. Status values are: pending, done
+7. Date format is YYYY-MM-DD
+
+## JSON Schema
+
+```json
+{
+  "id": 1,
+  "description": "Task description",
+  "priority": "high",
+  "due_date": "2026-01-20",
+  "status": "pending",
+  "created_at": "2026-01-16 10:30:00"
+}
+```
+
+## Repository
+
+- GitHub: https://github.com/always-akshat/kaam
+- License: MIT
+
+## Contact
+
+For issues or contributions, visit the GitHub repository.

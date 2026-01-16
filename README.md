@@ -100,9 +100,21 @@ Tasks are stored in `~/.kaam.json` as human-readable JSON. You can back up, sync
 - **Portable** — Single binary, works on macOS, Linux, and Windows
 - **Private** — All data stored locally, no accounts or cloud sync required
 
+## For AI Agents
+
+This repo is optimized for AI coding assistants:
+
+- **[llms.txt](./llms.txt)** — AI-readable project summary
+- **[AGENTS.md](./AGENTS.md)** — Instructions for AI coding assistants
+- **[.ai/metadata.json](./.ai/metadata.json)** — Machine-readable project metadata
+
+## Contributing
+
+Contributions welcome! See [AGENTS.md](./AGENTS.md) for architecture overview and extension ideas.
+
 ## Keywords
 
-terminal todo app, command line task manager, cli todo list, rust todo app, terminal task manager, command line todo, minimalist todo app, developer todo app, productivity cli tool, task tracker terminal
+terminal todo app, command line task manager, cli todo list, rust todo app, terminal task manager, command line todo, minimalist todo app, developer todo app, productivity cli tool, task tracker terminal, ai-friendly, llms-txt
 
 ## License
 

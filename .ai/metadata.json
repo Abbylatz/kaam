@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "kaam",
+  "description": "A fast, minimal command-line todo app written in Rust",
+  "version": "0.1.0",
+  "repository": "https://github.com/always-akshat/kaam",
+  "license": "MIT",
+  "language": "Rust",
+  "category": "productivity",
+  "type": "cli-tool",
+  "keywords": [
+    "todo",
+    "task-manager",
+    "cli",
+    "terminal",
+    "productivity",
+    "rust",
+    "command-line",
+    "todo-app",
+    "task-tracker",
+    "developer-tools",
+    "minimal",
+    "fast"
+  ],
+  "installation": {
+    "method": "cargo",
+    "command": "cargo install --path .",
+    "binary": "kaam"
+  },
+  "commands": [
+    {
+      "name": "add",
+      "description": "Add a new task",
+      "usage": "kaam add <description> [--priority low|medium|high] [--due YYYY-MM-DD]",
+      "examples": [
+        "kaam add \"Buy groceries\"",
+        "kaam add \"Finish report\" --priority high",
+        "kaam add \"Call mom\" --due 2026-01-20"
+      ]
+    },
+    {
+      "name": "list",
+      "description": "List all tasks with optional filters",
+      "usage": "kaam list [--status pending|done] [--priority low|medium|high]",
+      "examples": [
+        "kaam list",
+        "kaam list --status pending",
+        "kaam list --priority high"
+      ]
+    },
+    {
+      "name": "done",
+      "description": "Mark a task as completed",
+      "usage": "kaam done <id>",
+      "examples": [
+        "kaam done 1"
+      ]
+    },
+    {
+      "name": "edit",
+      "description": "Modify an existing task",
+      "usage": "kaam edit <id> [--description <text>] [--priority low|medium|high] [--due YYYY-MM-DD]",
+      "examples": [
+        "kaam edit 1 --description \"Updated task\"",
+        "kaam edit 1 --priority low"
+      ]
+    },
+    {
+      "name": "delete",
+      "description": "Remove a task",
+      "usage": "kaam delete <id>",
+      "examples": [
+        "kaam delete 1"
+      ]
+    },
+    {
+      "name": "usage",
+      "description": "Show detailed usage examples",
+      "usage": "kaam usage",
+      "examples": [
+        "kaam usage"
+      ]
+    }
+  ],
+  "data": {
+    "storage_path": "~/.kaam.json",
+    "format": "JSON",
+    "schema": {
+      "task": {
+        "id": "number",
+        "description": "string",
+        "priority": "low | medium | high | null",
+        "due_date": "YYYY-MM-DD | null",
+        "status": "pending | done",
+        "created_at": "YYYY-MM-DD HH:MM:SS"
+      }
+    }
+  },
+  "ai_instructions": {
+    "summary": "kaam is a simple CLI todo app. Help users manage tasks via terminal commands.",
+    "capabilities": [
+      "Add tasks with priority and due dates",
+      "List and filter tasks",
+      "Mark tasks complete",
+      "Edit task details",
+      "Delete tasks"
+    ],
+    "tips": [
+      "The storage file at ~/.kaam.json can be read/written directly",
+      "Task IDs are auto-incrementing integers",
+      "Priority and status are lowercase in JSON"
+    ]
+  },
+  "platforms": ["macos", "linux", "windows"],
+  "features": [
+    "Colored terminal output",
+    "Priority-based task management",
+    "Due date tracking",
+    "Status filtering",
+    "Local JSON storage",
+    "Single binary deployment"
+  ]
+}
